@@ -6,10 +6,19 @@
     <title>Carol's Bookstore</title>
 </head>
 <body>
-    <h1>Welcome to Carol's Bookstore.</h1>
+    <h1>Welcome to Carol's Bookstore</h1>
     <br>
-    <h2>This is where we will display the list of all books eventually.</h1>
-    <br><br>
+    <h2>Here are the books currently listed in our database:</h2>
+    <br>
+    <ul>
+    <% all_books.forEach( (single_book) => {  %>
+    <li><i><%= single_book.name %></i> by <%= single_book.author %></li>
+        <br>
+        <br>
+    <% }) %>
+    </ul>
+    <p>If you'd like to add a new title to our bookstore's database, please submit it using the form below. Thank you!</p>
+    <br>
 
     <h2>Add a New Book</h2>
     <form action="/add" method="POST">
