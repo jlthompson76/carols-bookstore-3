@@ -1,12 +1,12 @@
 {
   "name": "carol-bookstore",
   "version": "1.0.0",
-  "description": "",
+  "description": "CodeSquad class exercise",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Jamie L. Thompson",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.2",
