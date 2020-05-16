@@ -12,7 +12,7 @@
     <br>
     <ul>
     <% all_books.forEach( (single_book) => {  %>
-    <li><i><%= single_book.name %></i> by <%= single_book.author %></li>
+    <li><a href="/view/<%= single_book.book_id %>"><i><%= single_book.name %></i></a> by <%= single_book.author %></li>
         <br>
         <br>
     <% }) %>

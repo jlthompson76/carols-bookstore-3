@@ -53,6 +53,22 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/view/:book_id', (req, res) => {
+    const parameters = req.params;
+    const book_id = parameters['book_id'];
+    db_handler.collection(COLLECTION_NAME).find( {book_id: book_id} ).toArray ( (err, result) => {
+        if (err) {
+            res.send("Book not found");
+            console.log(err);
+        }
+        else {
+            res.render('book', {
+                'single_book': result[0]
+            });
+        };
+    });
+});
+
 app.post('/add', (req, res) => {
     // This is where you will get a POST request on the '/add' route. 
     // Step 5. Add your logic here.

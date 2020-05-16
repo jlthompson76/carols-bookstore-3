@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+</head>
+<body>
+    <p>Here are the details of the book you've selected:</p>
+    <b>Book ID:</b> <%= single_book.book_id %>
+    <br>
+    <br>
+    <b>Book Title:</b> <i><%= single_book.name %></i>
+    <br>
+    <br>
+    <b>Book Author:</b> <%= single_book.author %>
+    <br>
+    <br>
+    <b>Book Price:</b> $<%= single_book.price %>
+    <br>
+    <br>
+    <b>Number of Books Sold:</b> <%= single_book.num_sold %>
+    <br>
+    <br>
+    <br>
+    <a href="/">Back to the Carol's Bookstore homepage</a>
+</body>
+</html>
