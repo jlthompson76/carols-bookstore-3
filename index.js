@@ -69,6 +69,22 @@ app.get('/view/:book_id', (req, res) => {
     });
 });
 
+app.get('/updatePrice/:book_id', (req, res) => {
+    const parameters = req.params;
+    const book_id = parameters['book_id'];
+    const new_price = {$set: { price: 10} };
+    db_handler.collection(COLLECTION_NAME).updateOne( {book_id: book_id}, new_price, (err, result) => {
+        if (err) {
+            res.send("Could not update the price");
+            console.log(err);
+        }
+        else {
+            res.redirect('/view/' + book_id);
+            console.log(`The price was successfully changed to $10.`);
+        };
+    });
+});
+
 app.post('/add', (req, res) => {
     // This is where you will get a POST request on the '/add' route. 
     // Step 5. Add your logic here.
