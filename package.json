@@ -6,6 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jlthompson76/carols-bookstore-3.git"
+  },
   "author": "Jamie L. Thompson",
   "license": "ISC",
   "dependencies": {
