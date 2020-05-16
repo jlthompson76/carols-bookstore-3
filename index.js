@@ -53,6 +53,7 @@ app.get('/', (req, res) => {
     });
 });
 
+// Bonus #10 - Shows all of the information for a single book
 app.get('/view/:book_id', (req, res) => {
     const parameters = req.params;
     const book_id = parameters['book_id'];
@@ -60,8 +61,7 @@ app.get('/view/:book_id', (req, res) => {
         if (err) {
             res.send("Book not found");
             console.log(err);
-        }
-        else {
+        } else {
             res.render('book', {
                 'single_book': result[0]
             });
@@ -69,6 +69,7 @@ app.get('/view/:book_id', (req, res) => {
     });
 });
 
+// Bonus #11 - Updates the price of a single book to $10
 app.get('/updatePrice/:book_id', (req, res) => {
     const parameters = req.params;
     const book_id = parameters['book_id'];
@@ -77,10 +78,23 @@ app.get('/updatePrice/:book_id', (req, res) => {
         if (err) {
             res.send("Could not update the price");
             console.log(err);
-        }
-        else {
+        } else {
             res.redirect('/view/' + book_id);
             console.log(`The price was successfully changed to $10.`);
+        };
+    });
+});
+
+// Bonus #12 - Deletes a single book from the database
+app.get('/delete/:book_id', (req, res) => {
+    const parameters = req.params;
+    const book_id = parameters['book_id'];
+    db_handler.collection(COLLECTION_NAME).deleteOne( {book_id: book_id}, (err, result) => {
+        if (err) {
+            res.send("Could not delete the book");
+            console.log(err);
+        } else {
+            res.redirect('/');
         };
     });
 });
